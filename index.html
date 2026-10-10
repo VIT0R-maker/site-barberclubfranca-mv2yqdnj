@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Barbearia Barber Club | Cortes e Barba em Franca</title>
+<meta name="description" content="Barbearia em Franca com cortes masculinos, barba com toalha quente, visagismo e dia do noivo. Agende seu atendimento personalizado na Barber Club.">
+<meta name="theme-color" content="#C59B27">
+<meta property="og:title" content="Barbearia Barber Club | Cortes e Barba em Franca">
+<meta property="og:description" content="Barbearia em Franca com cortes masculinos, barba com toalha quente, visagismo e dia do noivo. Agende seu atendimento personalizado na Barber Club.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        primary: '#C59B27',
+        secondary: '#8B4E2B',
+        accent: '#E6B86A',
+        ink: '#111111',
+        surface: '#1A1A1A',
+        paper: '#F5F5F5'
+      },
+      fontFamily: {
+        heading: ['Cinzel', 'serif'],
+        body: ['Montserrat', 'sans-serif']
+      }
+    }
+  }
+};
+</script>
+<style>
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+body { background: #111111; color: #F5F5F5; font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
+.grid-texture {
+  background-image:
+    linear-gradient(rgba(197,155,39,0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(197,155,39,0.07) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+.gold-rule { height: 1px; background: linear-gradient(90deg, transparent, rgba(197,155,39,0.45), transparent); }
+a:focus-visible, button:focus-visible { outline: 2px solid #E6B86A; outline-offset: 3px; border-radius: 4px; }
+.zoom-img { transition: transform 1.6s cubic-bezier(.2,.6,.2,1); }
+.zoom-wrap:hover .zoom-img, .zoom-wrap:focus-within .zoom-img { transform: scale(1.08); }
+.js-reveal { opacity: 0; transform: translateY(24px); transition: opacity .9s ease, transform .9s ease; }
+.js-reveal.is-in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js-reveal { opacity: 1; transform: none; transition: none; }
+  .zoom-img { transition: none; }
+  .zoom-wrap:hover .zoom-img { transform: none; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Barbearia Barber Club",
+  "telephone": "(16)99167-6818",
+  "address": { "@type": "PostalAddress", "addressLocality": "Franca" },
+  "sameAs": ["https://www.instagram.com/barberclubfranca/"]
+}
+</script>
+</head>
+<body class="font-body antialiased">
+<a href="#conteudo" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-primary focus:text-ink focus:px-4 focus:py-2 focus:rounded">Pular para o conteúdo</a>
+
+<header class="fixed inset-x-0 top-0 z-50 border-b border-primary/20 bg-ink/85 backdrop-blur-md">
+  <div class="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 lg:px-8">
+    <a href="#inicio" class="flex items-center gap-3">
+      <img src="./logo.jpg" alt="Logotipo circular da Barbearia Barber Club com ilustração de homem de barba e óculos de sol" width="400" height="400" loading="lazy" class="h-11 w-11 rounded-full object-cover ring-1 ring-primary/60" style="object-position: 50% 50%; aspect-ratio: 1 / 1;">
+      <span class="font-heading text-sm font-semibold uppercase tracking-[0.14em] text-paper sm:text-base">Barbearia Barber Club</span>
+    </a>
+    <nav aria-label="Principal" class="hidden md:block">
+      <ul class="flex items-center gap-8 text-sm font-medium uppercase tracking-[0.12em] text-paper/80">
+        <li><a class="transition-colors hover:text-accent" href="#inicio">Início</a></li>
+        <li><a class="transition-colors hover:text-accent" href="#sobre">Sobre</a></li>
+        <li><a class="transition-colors hover:text-accent" href="#servicos">Serviços</a></li>
+        <li><a class="transition-colors hover:text-accent" href="#galeria">Galeria</a></li>
+        <li><a class="rounded-sm border border-primary px-4 py-2 text-primary transition-colors hover:bg-primary hover:text-ink" href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+    <button id="menu-btn" type="button" class="inline-flex h-11 w-11 items-center justify-center rounded border border-primary/40 text-primary md:hidden" aria-expanded="false" aria-controls="menu-mobile" aria-label="Abrir menu">
+      <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg id="icon-close" class="hidden" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <div id="menu-mobile" class="hidden border-t border-primary/20 bg-ink md:hidden">
+    <ul class="flex flex-col px-5 py-4 text-sm font-medium uppercase tracking-[0.14em]">
+      <li><a class="block border-b border-primary/10 py-4 text-paper/90 hover:text-accent" href="#inicio">Início</a></li>
+      <li><a class="block border-b border-primary/10 py-4 text-paper/90 hover:text-accent" href="#sobre">Sobre</a></li>
+      <li><a class="block border-b border-primary/10 py-4 text-paper/90 hover:text-accent" href="#servicos">Serviços</a></li>
+      <li><a class="block border-b border-primary/10 py-4 text-paper/90 hover:text-accent" href="#galeria">Galeria</a></li>
+      <li><a class="block py-4 text-primary hover:text-accent" href="#contato">Contato</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="conteudo">
+  <section id="inicio" class="relative flex min-h-[100svh] items-end overflow-hidden">
+    <img src="./hero.jpg" alt="Interior moderno da Barbearia Barber Club com sofás de couro capitonê, bancadas e iluminação decorativa" width="1200" height="1600" fetchpriority="high" class="absolute inset-0 h-full w-full object-cover" style="object-position: 50% 35%;">
+    <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/55 to-ink/25"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-ink/80 via-ink/20 to-transparent"></div>
+    <div class="absolute inset-0 grid-texture opacity-60"></div>
+    <div class="relative mx-auto w-full max-w-7xl px-5 pb-16 pt-36 lg:px-8 lg:pb-24">
+      <div class="max-w-3xl">
+        <div class="mb-6 flex items-center gap-4 js-reveal" data-reveal>
+          <span class="h-px w-12 bg-primary"></span>
+          <p class="text-xs font-semibold uppercase tracking-[0.28em] text-accent sm:text-sm">Barbearia Barber Club em Franca</p>
+        </div>
+        <h1 class="font-heading font-bold uppercase leading-[1.05] text-paper js-reveal" data-reveal style="font-size: clamp(2.4rem, 7vw, 5.5rem); text-shadow: 0 4px 30px rgba(0,0,0,0.5);">Estilo e cuidado sob medida para você</h1>
+        <div class="mt-10 js-reveal" data-reveal>
+          <a href="https://wa.me/5516991676818" data-primary-cta target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-3 rounded-sm bg-primary px-8 py-4 text-sm font-semibold uppercase tracking-[0.16em] text-ink shadow-[0_10px_40px_-10px_rgba(197,155,39,0.7)] transition hover:-translate-y-0.5 hover:bg-accent">
+            Agendar pelo WhatsApp
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="transition-transform group-hover:translate-x-1"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-rule"></div>
+
+  <section id="sobre" class="relative overflow-x-clip bg-ink py-24 lg:py-36">
+    <div class="mx-auto grid max-w-7xl items-center gap-14 px-5 lg:grid-cols-12 lg:gap-20 lg:px-8">
+      <div class="relative mx-auto w-full max-w-md lg:col-span-5 lg:max-w-none js-reveal" data-reveal>
+        <div class="absolute -bottom-4 -right-4 h-full w-full rounded-md border border-primary/50 sm:-bottom-6 sm:-right-6"></div>
+        <div class="absolute -left-3 -top-3 h-24 w-24 grid-texture sm:-left-6 sm:-top-6 sm:h-32 sm:w-32"></div>
+        <img src="./sobre.jpg" alt="Noivo de terno verde e gravata clara sentado em poltrona de barbeiro em ambiente decorado" width="1200" height="1600" loading="lazy" class="relative aspect-[3/4] w-full rounded-md object-cover shadow-[0_30px_60px_-20px_rgba(0,0,0,0.8)]" style="object-position: 50% 30%;">
+      </div>
+      <div class="lg:col-span-7">
+        <div class="mb-6 h-px w-16 bg-primary js-reveal" data-reveal></div>
+        <h2 class="font-heading font-semibold uppercase leading-tight text-paper js-reveal" data-reveal style="font-size: clamp(1.9rem, 4.5vw, 3.5rem);">Sobre a Barbearia Barber Club</h2>
+        <p class="mt-8 max-w-2xl border-l-2 border-secondary pl-6 leading-relaxed text-paper/80 js-reveal" data-reveal style="font-size: clamp(1.05rem, 1.6vw, 1.3rem);">Oferecemos cortes masculinos clássicos e modernos, barba alinhada com toalha quente, visagismo e atendimento exclusivo para o dia do noivo, atendendo homens de todas as idades.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicos" class="relative overflow-x-clip bg-surface py-24 lg:py-36">
+    <div class="absolute inset-0 grid-texture opacity-70"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-ink via-transparent to-ink opacity-80"></div>
+    <div class="relative mx-auto max-w-7xl px-5 lg:px-8">
+      <div class="mb-14 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between js-reveal" data-reveal>
+        <h2 class="font-heading font-semibold uppercase leading-none text-paper" style="font-size: clamp(2rem, 5vw, 4rem);">Serviços</h2>
+        <div class="h-px flex-1 bg-gradient-to-r from-primary/60 to-transparent sm:mb-3 sm:ml-8"></div>
+      </div>
+      <ul class="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+        <li class="group relative overflow-hidden rounded-md border border-primary/20 bg-ink/90 p-7 transition duration-500 hover:-translate-y-1 hover:border-primary/70 lg:col-span-2 lg:p-9 js-reveal" data-reveal>
+          <span class="mb-6 block h-px w-10 bg-primary transition-all duration-500 group-hover:w-20"></span>
+          <h3 class="font-heading text-xl font-semibold uppercase tracking-wide text-accent lg:text-2xl">Corte de Cabelo</h3>
+          <p class="mt-3 leading-relaxed text-paper/75">Corte masculino com acabamento alinhado ao seu estilo.</p>
+        </li>
+        <li class="group relative overflow-hidden rounded-md border border-primary/20 bg-ink/90 p-7 transition duration-500 hover:-translate-y-1 hover:border-primary/70 lg:p-9 js-reveal" data-reveal>
+          <span class="mb-6 block h-px w-10 bg-primary transition-all duration-500 group-hover:w-20"></span>
+          <h3 class="font-heading text-xl font-semibold uppercase tracking-wide text-accent">Fade Barba</h3>
+          <p class="mt-3 leading-relaxed text-paper/75">Aparação e desenho da barba com transição em degradê.</p>
+        </li>
+        <li class="group relative overflow-hidden rounded-md border border-primary/20 bg-ink/90 p-7 transition duration-500 hover:-translate-y-1 hover:border-primary/70 lg:p-9 js-reveal" data-reveal>
+          <span class="mb-6 block h-px w-10 bg-primary transition-all duration-500 group-hover:w-20"></span>
+          <h3 class="font-heading text-xl font-semibold uppercase tracking-wide text-accent">Bigode</h3>
+          <p class="mt-3 leading-relaxed text-paper/75">Alinhamento, corte e modelagem do bigode.</p>
+        </li>
+        <li class="group relative overflow-hidden rounded-md border border-primary/20 bg-ink/90 p-7 transition duration-500 hover:-translate-y-1 hover:border-primary/70 lg:p-9 js-reveal" data-reveal>
+          <span class="mb-6 block h-px w-10 bg-primary transition-all duration-500 group-hover:w-20"></span>
+          <h3 class="font-heading text-xl font-semibold uppercase tracking-wide text-accent">Visagismo</h3>
+          <p class="mt-3 leading-relaxed text-paper/75">Harmonização do visual de acordo com o formato e traços do rosto.</p>
+        </li>
+        <li class="group relative overflow-hidden rounded-md border border-primary/60 bg-gradient-to-br from-secondary/50 to-ink p-7 transition duration-500 hover:-translate-y-1 hover:border-accent md:col-span-2 lg:p-9 js-reveal" data-reveal>
+          <span class="mb-6 block h-px w-16 bg-accent transition-all duration-500 group-hover:w-28"></span>
+          <h3 class="font-heading text-2xl font-semibold uppercase tracking-wide text-accent">Dia do Noivo</h3>
+          <p class="mt-3 max-w-lg leading-relaxed text-paper/85">Atendimento personalizado com serviços completos para o dia do noivo.</p>
+        </li>
+        <li class="group relative overflow-hidden rounded-md border border-primary/20 bg-ink/90 p-7 transition duration-500 hover:-translate-y-1 hover:border-primary/70 lg:p-9 js-reveal" data-reveal>
+          <span class="mb-6 block h-px w-10 bg-primary transition-all duration-500 group-hover:w-20"></span>
+          <h3 class="font-heading text-xl font-semibold uppercase tracking-wide text-accent">Taper Fade</h3>
+          <p class="mt-3 leading-relaxed text-paper/75">Corte masculino com degradê pontual nas laterais e na nuca.</p>
+        </li>
+        <li class="group relative overflow-hidden rounded-md border border-primary/20 bg-ink/90 p-7 transition duration-500 hover:-translate-y-1 hover:border-primary/70 md:col-span-2 lg:col-span-4 lg:p-9 js-reveal" data-reveal>
+          <div class="flex flex-col gap-3 lg:flex-row lg:items-center lg:gap-12">
+            <h3 class="font-heading text-xl font-semibold uppercase tracking-wide text-accent lg:text-2xl">Corte Clássico</h3>
+            <span class="hidden h-px flex-1 bg-gradient-to-r from-primary/50 to-transparent lg:block"></span>
+            <p class="leading-relaxed text-paper/75 lg:max-w-md">Corte tradicional estruturado com tesoura ou máquina.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="galeria" class="relative overflow-x-clip bg-ink py-24 lg:py-36">
+    <div class="mx-auto max-w-7xl px-5 lg:px-8">
+      <div class="mx-auto mb-16 max-w-2xl text-center js-reveal" data-reveal>
+        <div class="mx-auto mb-6 h-px w-16 bg-primary"></div>
+        <h2 class="font-heading font-semibold uppercase leading-tight text-paper" style="font-size: clamp(1.9rem, 4.5vw, 3.5rem);">Estilo e Precisão</h2>
+        <p class="mt-5 text-paper/75" style="font-size: clamp(1rem, 1.5vw, 1.15rem);">Acompanhe os resultados dos nossos cortes e serviços em Franca.</p>
+      </div>
+      <div class="grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-4">
+        <figure class="zoom-wrap overflow-hidden rounded-lg border border-primary/20 shadow-[0_20px_40px_-20px_rgba(0,0,0,0.9)] js-reveal" data-reveal>
+          <img src="./galeria-1.jpg" alt="Homem maduro de cabelos e barba grisalhos bem alinhados sorrindo para a câmera" width="900" height="1200" loading="lazy" class="zoom-img aspect-[3/4] w-full object-cover" style="object-position: 50% 25%;">
+        </figure>
+        <figure class="zoom-wrap mt-8 overflow-hidden rounded-lg border border-primary/20 shadow-[0_20px_40px_-20px_rgba(0,0,0,0.9)] md:mt-14 js-reveal" data-reveal>
+          <img src="./galeria-2.jpg" alt="Cliente deitado na cadeira recebendo toalha quente no rosto com linha da barba desenhada" width="900" height="1200" loading="lazy" class="zoom-img aspect-[3/4] w-full object-cover" style="object-position: 50% 35%;">
+        </figure>
+        <figure class="zoom-wrap overflow-hidden rounded-lg border border-primary/20 shadow-[0_20px_40px_-20px_rgba(0,0,0,0.9)] js-reveal" data-reveal>
+          <img src="./galeria-3.jpg" alt="Perfil de jovem com corte de cabelo ondulado médio finalizado e alinhamento de costeleta" width="900" height="1200" loading="lazy" class="zoom-img aspect-[3/4] w-full object-cover" style="object-position: 50% 30%;">
+        </figure>
+        <figure class="zoom-wrap mt-8 overflow-hidden rounded-lg border border-primary/20 shadow-[0_20px_40px_-20px_rgba(0,0,0,0.9)] md:mt-14 js-reveal" data-reveal>
+          <img src="./galeria-4.jpg" alt="Traseira da cabeça de cliente exibindo texturização e alinhamento do corte de cabelo escuro" width="900" height="1200" loading="lazy" class="zoom-img aspect-[3/4] w-full object-cover" style="object-position: 50% 40%;">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="relative overflow-hidden py-24 lg:py-36">
+    <div class="absolute inset-0 bg-gradient-to-br from-secondary/70 via-surface to-ink"></div>
+    <div class="absolute inset-0 grid-texture opacity-70"></div>
+    <div class="relative mx-auto max-w-4xl px-5 text-center lg:px-8">
+      <div class="mx-auto mb-8 flex items-center justify-center gap-4 js-reveal" data-reveal>
+        <span class="h-px w-12 bg-primary"></span>
+        <span class="h-2 w-2 rotate-45 bg-primary"></span>
+        <span class="h-px w-12 bg-primary"></span>
+      </div>
+      <h2 class="font-heading font-bold uppercase leading-tight text-paper js-reveal" data-reveal style="font-size: clamp(2rem, 5.5vw, 4.25rem);">Reserve seu horário em Franca</h2>
+      <p class="mx-auto mt-8 max-w-2xl leading-relaxed text-paper/85 js-reveal" data-reveal style="font-size: clamp(1.05rem, 1.6vw, 1.25rem);">Entre em contato pelo WhatsApp (16)99167-6818 e garanta seu atendimento personalizado na Barber Club.</p>
+      <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row js-reveal" data-reveal>
+        <a href="https://wa.me/5516991676818" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 rounded-sm bg-primary px-8 py-4 text-sm font-semibold uppercase tracking-[0.16em] text-ink shadow-[0_10px_40px_-10px_rgba(197,155,39,0.7)] transition hover:-translate-y-0.5 hover:bg-accent">Conversar no WhatsApp</a>
+        <a href="tel:+5516991676818" class="inline-flex items-center rounded-sm border border-primary/60 px-8 py-4 text-sm font-semibold tracking-[0.12em] text-paper transition hover:border-accent hover:text-accent">(16)99167-6818</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="border-t border-primary/20 bg-ink py-12">
+  <div class="mx-auto flex max-w-7xl flex-col items-center gap-6 px-5 text-center lg:px-8">
+    <p class="font-heading text-lg font-semibold uppercase tracking-[0.16em] text-paper">Barbearia Barber Club</p>
+    <p class="max-w-xl text-sm leading-relaxed text-paper/70">Barbearia Barber Club em Franca. Atendimento focado no seu estilo.</p>
+    <ul class="flex items-center gap-8 text-sm uppercase tracking-[0.14em]">
+      <li><a href="https://www.instagram.com/barberclubfranca/" target="_blank" rel="noopener noreferrer" class="text-paper/80 transition-colors hover:text-accent">Instagram</a></li>
+      <li><a href="#inicio" class="text-paper/80 transition-colors hover:text-accent">Voltar ao topo</a></li>
+    </ul>
+    <div class="gold-rule w-full max-w-md"></div>
+    <p class="text-xs text-paper/60">Barbearia Barber Club</p>
+  </div>
+</footer>
+
+<a href="https://wa.me/5516991676818" target="_blank" rel="noopener noreferrer" aria-label="Conversar no WhatsApp" class="fixed bottom-5 right-5 z-40 inline-flex h-14 w-14 items-center justify-center rounded-full bg-primary text-ink shadow-[0_10px_30px_-5px_rgba(0,0,0,0.7)] ring-2 ring-ink transition hover:scale-105 hover:bg-accent">
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11 11 0 0 0 3.2 17.3L2 22l4.8-1.2A11 11 0 0 0 12 22h.01A11 11 0 0 0 20.5 3.5zM12 20.2a9 9 0 0 1-4.6-1.3l-.3-.2-2.8.7.8-2.7-.2-.3A9 9 0 1 1 12 20.2zm5-6.7c-.3-.1-1.6-.8-1.9-.9s-.5-.1-.7.1-.8.9-.9 1.1-.3.2-.6.1a7.3 7.3 0 0 1-3.6-3.1c-.3-.5.3-.5.8-1.5a.6.6 0 0 0 0-.5l-.9-2c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.200 5.200 0 0 0 1.100 2.800 11.900 11.900 0 0 0 4.600 4.100c1.700.7 2.400.8 3.200.7a2.700 2.700 0 0 0 1.800-1.300 2.200 2.200 0 0 0 .2-1.300c-.1-.1-.3-.2-.6-.3z"/></svg>
+</a>
+
+<script>
+(function () {
+  var btn = document.getElementById('menu-btn');
+  var menu = document.getElementById('menu-mobile');
+  var iconOpen = document.getElementById('icon-open');
+  var iconClose = document.getElementById('icon-close');
+  function setMenu(open) {
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+    menu.classList.toggle('hidden', !open);
+    iconOpen.classList.toggle('hidden', open);
+    iconClose.classList.toggle('hidden', !open);
+  }
+  btn.addEventListener('click', function () {
+    setMenu(btn.getAttribute('aria-expanded') !== 'true');
+  });
+  menu.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { setMenu(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') {
+      setMenu(false);
+      btn.focus();
+    }
+  });
+  var items = document.querySelectorAll('[data-reveal]');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) {
+    items.forEach(function (el) { el.classList.add('is-in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  items.forEach(function (el) { io.observe(el); });
+})();
+</script>
+</body>
+</html>
